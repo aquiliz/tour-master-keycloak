@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${embedded.postgresql.user}}
+    password: ${embedded.postgresql.password}
+    url: jdbc:postgresql://${embedded.postgresql.host}:${embedded.postgresql.port}/tour_master_keycloak
+embedded:
+  postgresql:
+    enabled: true
+    dockerImage: postgres:latest
+    user: postgres
+    password: root

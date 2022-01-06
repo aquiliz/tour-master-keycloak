@@ -1,0 +1,26 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${DATA_SOURCE_USERNAME:postgres}
+    password: ${DATA_SOURCE_PASSWORD:admin}
+    url: jdbc:postgresql://localhost:5432/tour_master_keycloak
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+keycloak:
+  realm:  tour_master
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: tour_master
+  use-resource-role-mappings: true
+  bearer-only: true
+  credentials:
+    secret: b6c729f8-b229-4050-a943-e5b916860ce7
+
+
+

@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "81cd6ec6-6c06-458e-980d-ce2fa77103ec",
+		"name": "Tour Master Keycloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate as admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c7820e4f-2e0a-4a41-92a1-1ffe3f1d1df1",
+						"exec": [
+							"var jsonData = JSON.parse(pm.response.text());\r",
+							"pm.collectionVariables.set(\"accessToken\", jsonData.access_token);\r",
+							"pm.collectionVariables.set(\"refreshToken\", jsonData.refresh_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "tour_master",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "b6c729f8-b229-4050-a943-e5b916860ce7",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "usr_admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "usr_admin",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/tour_master/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"tour_master",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate as tour creator",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8448caa5-7a9b-4e3d-a773-27b045dac447",
+						"exec": [
+							"var jsonData = JSON.parse(pm.response.text());\r",
+							"pm.collectionVariables.set(\"accessToken\", jsonData.access_token);\r",
+							"pm.collectionVariables.set(\"refreshToken\", jsonData.refresh_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "tour_master",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "b6c729f8-b229-4050-a943-e5b916860ce7",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "usr_tour_creator",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "usr_tour_creator",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/tour_master/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"tour_master",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate as regular user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73bffd7b-a675-416b-9717-d563db56395c",
+						"exec": [
+							"var jsonData = JSON.parse(pm.response.text());\r",
+							"pm.collectionVariables.set(\"accessToken\", jsonData.access_token);\r",
+							"pm.collectionVariables.set(\"refreshToken\", jsonData.refresh_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "tour_master",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "b6c729f8-b229-4050-a943-e5b916860ce7",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "usr_regular_user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "usr_regular_user",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/tour_master/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"tour_master",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tour",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"the wonders of Peru 3\",\r\n        \"destination\": \"Peru\",\r\n        \"description\": \"Sample description about Peru 3\",\r\n        \"priceAdult\": 3000,\r\n        \"currency\": \"EUR\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/tours",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tours",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/tours",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tour",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/tours/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tours",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dfd85fd6-9f10-4dc5-879a-d6457dcf1010",
+						"exec": [
+							"var jsonData = JSON.parse(pm.response.text());\r",
+							"pm.collectionVariables.set(\"accessToken\", jsonData.access_token);\r",
+							"pm.collectionVariables.set(\"refreshToken\", jsonData.refresh_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "tour_master",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "{{refreshToken}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "b6c729f8-b229-4050-a943-e5b916860ce7",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/tour_master/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"tour_master",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d3a95006-6d9e-4971-87f1-a217f22673ea",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8a317a56-0f38-4a04-b686-b42ebeac29d2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e5d5f604-397d-4923-b129-cc41e3f855f4",
+			"key": "refreshToken",
+			"value": ""
+		},
+		{
+			"id": "a173cd3b-47a3-49bf-ad74-89cfd7d74f0a",
+			"key": "accessToken",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
