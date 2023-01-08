@@ -2,7 +2,7 @@
 
 ### Tour Master (with Keycloak) ###
 
-Tour Master is a Java/Spring - based, cloud-native app for managing short-lasted touristic tours.  
+Tour Master is a Spring - based app for managing short-lasted touristic tours.  
 It uses a PostgreSQL relational database and Keycloak as identity and access manager. 
 
 
